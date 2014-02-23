@@ -1,0 +1,20 @@
+{
+  "name": "teg-ng-select-substring",
+  "main": "teg-ng-select-substring.min.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "angular": "1.2.13",
+    "angular-mocks": "1.2.13"
+  },
+  "ignore": [
+    ".*",
+    "app",
+    "test",
+    "src",
+    "karma*",
+    "package.json",
+    "Gruntfile.js"
+  ],
+  "private": true
+}

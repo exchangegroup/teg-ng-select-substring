@@ -1,5 +1,5 @@
 {
-  "name": "teg-ng-scroll-element-top",
+  "name": "teg-ng-select-substring",
   "version": "0.0.1",
   "devDependencies": {
     "gulp": "~3.5.2",
