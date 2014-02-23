@@ -1,9 +1,9 @@
 var gulp = require('gulp'),
-  gutil = require('gulp-util'),
 
   coffee = require('gulp-coffee'),
   uglify = require('gulp-uglify'),
-  rename = require('gulp-rename');
+  rename = require('gulp-rename'),
+  karma = require('gulp-karma');
 
   paths = {
     scripts: ['src/*.coffee'],
