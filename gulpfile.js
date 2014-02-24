@@ -20,7 +20,7 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(paths.dest));
 });
 
-gulp.task('scripts_min', function() {
+gulp.task('scripts_min', function(a, b) {
   return gulp.src(paths.scripts)
     .pipe(coffee())
     .pipe(ngmin())
@@ -37,7 +37,7 @@ gulp.task('test', function() {
     }));
 });
 
-gulp.task('connect', connect.server({
+gulp.task('connect', ['build'], connect.server({
   root: ['app', 'dist'],
   port: 1337,
   livereload: true,
@@ -46,14 +46,15 @@ gulp.task('connect', connect.server({
   }
 }));
 
-gulp.task('html', function () {
+gulp.task('html', function() {
   gulp.src('./app/*.html')
     .pipe(connect.reload());
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', function() {
   gulp.watch(paths.app, ['html']);
 });
 
+gulp.task('build', ['test', 'scripts', 'scripts_min']);
 gulp.task('serve', ['connect', 'watch']);
-gulp.task('default', ['test', 'scripts', 'scripts_min']);
+gulp.task('default', ['build']);

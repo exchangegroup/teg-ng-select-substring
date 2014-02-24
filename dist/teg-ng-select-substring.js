@@ -10,17 +10,23 @@
         },
         selectUnsafe: function (text, highlightText) {
           var word, words, _i, _len;
+          if (text == null) {
+            text = '';
+          }
           words = this.extractWords(highlightText);
           for (_i = 0, _len = words.length; _i < _len; _i++) {
             word = words[_i];
             text = this.replaceOneWord(text, word);
           }
-          text = this.escapeHtml(text);
+          text = tegNgTextUtils.escapeHtml(text);
           text = text.replace(/__tag_start__/g, '<span class=\'SelectedSubstring\'>');
           return text.replace(/__tag_end__/g, '</span>');
         },
         extractWords: function (text) {
           var words;
+          if (text == null) {
+            text = '';
+          }
           words = text.split(' ');
           words = words.filter(function (element) {
             return element.length;
@@ -41,9 +47,6 @@
           return array.filter(function (value, index, self) {
             return self.indexOf(value) === index;
           });
-        },
-        escapeHtml: function (unsafe) {
-          return unsafe.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
         }
       };
     }
