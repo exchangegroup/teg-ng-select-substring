@@ -2,7 +2,7 @@
   "name": "teg-ng-select-substring",
   "main": "teg-ng-select-substring.min.js",
   "dependencies": {
-    "teg-ng-regexp-utils": "git@github.com:bikeexchange/teg-ng-regexp-utils.git#~0.1.1"
+    "teg-ng-text-utils": "git@github.com:bikeexchange/teg-ng-text-utils.git#~0.1.4"
   },
   "devDependencies": {
     "angular": "1.2.13",

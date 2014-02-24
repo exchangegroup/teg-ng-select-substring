@@ -14,7 +14,7 @@ module.exports = function(config) {
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/bower_components/es5-shim/es5-shim.min.js',
-      'app/bower_components/teg-ng-regexp-utils/dist/teg-ng-regexp-utils.min.js',
+      'app/bower_components/teg-ng-text-utils/dist/teg-ng-text-utils.min.js',
       'src/**/*.coffee',
       'test/**/*spec.coffee'
     ],

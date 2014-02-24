@@ -1,7 +1,7 @@
 "use strict"
 
-angular.module('TegNgSelectSubstring', ['TegNgRegexpUtils']).
-factory('tegNgSelectSubstring', ['tegNgRegexpUtils', (tegNgRegexpUtils) ->
+angular.module('TegNgSelectSubstring', ['TegNgTextUtils']).
+factory('tegNgSelectSubstring', ['tegNgTextUtils', (tegNgTextUtils) ->
   select: (text, highlightText) ->
     words = @extractWords(highlightText)
     text = @replaceOneWord(text, word) for word in words
@@ -17,7 +17,7 @@ factory('tegNgSelectSubstring', ['tegNgRegexpUtils', (tegNgRegexpUtils) ->
     words.sort((a, b) -> a.length - b.length)
 
   replaceOneWord: (text, word) ->
-    replaceWhat = tegNgRegexpUtils.escape(word)
+    replaceWhat = tegNgTextUtils.escapeRegexp(word)
     replaceRegExp = new RegExp("\\b(#{replaceWhat})", 'gi')
     replaceWith = "__tag_start__$1__tag_end__"
     text.replace(replaceRegExp, replaceWith)

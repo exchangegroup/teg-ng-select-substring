@@ -32,4 +32,4 @@ gulp.task('test', function() {
     }));
 });
 
-gulp.task('default', ['scripts', 'scripts_min']);
+gulp.task('default', ['test', 'scripts', 'scripts_min']);

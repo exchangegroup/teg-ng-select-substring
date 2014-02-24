@@ -1,10 +1,10 @@
 describe 'TegNgSelectSubstring helper', ->
   beforeEach -> module('TegNgSelectSubstring')
   beforeEach ->
-    @mockTegRegexp = { escape: (text) -> text }
+    @mockTegTextUtils = { escapeRegexp: (text) -> text }
 
     angular.mock.module ($provide) =>
-     $provide.value 'tegNgRegexpUtils', @mockTegRegexp
+     $provide.value 'tegNgTextUtils', @mockTegTextUtils
      null
 
   beforeEach(inject((@tegNgSelectSubstring) ->))
@@ -15,7 +15,7 @@ describe 'TegNgSelectSubstring helper', ->
       "<span class='SelectedSubstring'>Pill</span>ar is <span class='SelectedSubstring'>big</span>. Oil spill")
 
   it 'escapes regexp', ->
-    @mockTegRegexp.escape = (text) -> "escaped #{ text }"
+    @mockTegTextUtils.escapeRegexp = (text) -> "escaped #{ text }"
     result = @tegNgSelectSubstring.select('Folding escaped chair', 'chaiR')
     expect(result).toBe "Folding <span class='SelectedSubstring'>escaped chair</span>"
 
