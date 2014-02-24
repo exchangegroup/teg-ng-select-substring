@@ -4,11 +4,13 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   rename = require('gulp-rename'),
   karma = require('gulp-karma'),
-  ngmin = require('gulp-ngmin');
+  ngmin = require('gulp-ngmin'),
+  connect = require('gulp-connect');
 
   paths = {
     scripts: ['src/*.coffee'],
-    dest: 'dist'
+    dest: 'dist',
+    app: ['./app/*.html', './app/scripts/*.js']
   };
 
 gulp.task('scripts', function() {
@@ -35,4 +37,23 @@ gulp.task('test', function() {
     }));
 });
 
+gulp.task('connect', connect.server({
+  root: ['app', 'dist'],
+  port: 1337,
+  livereload: true,
+  open: {
+    browser: 'Google Chrome'
+  }
+}));
+
+gulp.task('html', function () {
+  gulp.src('./app/*.html')
+    .pipe(connect.reload());
+});
+
+gulp.task('watch', function () {
+  gulp.watch(paths.app, ['html']);
+});
+
+gulp.task('serve', ['connect', 'watch']);
 gulp.task('default', ['test', 'scripts', 'scripts_min']);

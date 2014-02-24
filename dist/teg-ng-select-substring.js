@@ -2,9 +2,13 @@
   'use strict';
   angular.module('TegNgSelectSubstring', ['TegNgTextUtils']).factory('tegNgSelectSubstring', [
     'tegNgTextUtils',
-    function (tegNgTextUtils) {
+    '$sce',
+    function (tegNgTextUtils, $sce) {
       return {
         select: function (text, highlightText) {
+          return $sce.trustAsHtml(this.selectUnsafe(text, highlightText));
+        },
+        selectUnsafe: function (text, highlightText) {
           var word, words, _i, _len;
           words = this.extractWords(highlightText);
           for (_i = 0, _len = words.length; _i < _len; _i++) {

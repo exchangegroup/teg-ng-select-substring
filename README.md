@@ -23,7 +23,14 @@ Add module to your app's dependencies:
 
 ## Usage
 
-    tegSelectSubstring.select('My penguin is happy!', 'Penguin')
+In HTML:
+
+    <span ng-bind-html="tegNgSelectSubstring.select('My penguin is happy!', 'Penguin')"></span>
+
+Or in JavaScript:
+
+    tegNgSelectSubstring.selectUnsafe('My penguin is happy!', 'Penguin')\
+
 
 will produce:
 
@@ -40,6 +47,10 @@ After cloning the github repo into a dir:
 Test:
 
     gulp test
+
+Demo in browser:
+
+    gulp serve
 
 Build:
 

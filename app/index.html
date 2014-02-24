@@ -1,0 +1,36 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href="/styles/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body ng-app='TegTestApp' ng-controller='tegTestAppController'>
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <h1>Highlighting</h1>
+
+    <p>Text:</p>
+    <input type='text' ng-model='text' />
+    <br>
+
+    <p>Result: <span ng-bind-html='tegNgSelectSubstring.select(text, textToHighlight)'></span></p>
+    <p>Text to highlight:</p>
+    <input type='text' ng-model='textToHighlight' />
+
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/teg-ng-text-utils/dist/teg-ng-text-utils.min.js"></script>
+    <script src="teg-ng-select-substring.min.js"></script>
+    <script src="scripts/teg-test-app.js"></script>
+  </body>
+</html>
