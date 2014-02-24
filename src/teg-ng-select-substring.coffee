@@ -1,3 +1,5 @@
+"use strict"
+
 angular.module('TegNgSelectSubstring', ['TegNgRegexpUtils']).
 factory('tegNgSelectSubstring', ['tegNgRegexpUtils', (tegNgRegexpUtils) ->
   select: (text, highlightText) ->
@@ -31,5 +33,4 @@ factory('tegNgSelectSubstring', ['tegNgRegexpUtils', (tegNgRegexpUtils) ->
      .replace(/>/g, "&gt;")
      .replace(/"/g, "&quot;")
      .replace(/'/g, "&#039;");
-
 ])
