@@ -8,9 +8,12 @@ Highlights a subsctring in HTML text.
 
 Include the JS script:
 
+    <script src="/bower_components/teg-ng-regexp-utils/dist/teg-ng-regexp-utils.min.js"></script>
     <script src="/bower_components/<path to file name>.js"></script>
 
-If you need to support IE8 and other older browsers please include:
+If you need to support IE8 and other older browsers please Include:
+
+    bower install /es5-shim
 
     <script src="/bower_components/es5-shim/es5-shim.min.js"></script>
 
