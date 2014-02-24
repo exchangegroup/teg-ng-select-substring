@@ -1,7 +1,7 @@
 "use strict"
 
 angular.module('TegNgSelectSubstring', ['TegNgTextUtils']).
-factory('tegNgSelectSubstring', ['tegNgTextUtils', (tegNgTextUtils) ->
+factory('tegNgSelectSubstring', (tegNgTextUtils) ->
   select: (text, highlightText) ->
     words = @extractWords(highlightText)
     text = @replaceOneWord(text, word) for word in words
@@ -33,4 +33,4 @@ factory('tegNgSelectSubstring', ['tegNgTextUtils', (tegNgTextUtils) ->
      .replace(/>/g, "&gt;")
      .replace(/"/g, "&quot;")
      .replace(/'/g, "&#039;");
-])
+)

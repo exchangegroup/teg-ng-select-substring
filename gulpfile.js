@@ -3,7 +3,8 @@ var gulp = require('gulp'),
   coffee = require('gulp-coffee'),
   uglify = require('gulp-uglify'),
   rename = require('gulp-rename'),
-  karma = require('gulp-karma');
+  karma = require('gulp-karma'),
+  ngmin = require('gulp-ngmin');
 
   paths = {
     scripts: ['src/*.coffee'],
@@ -13,12 +14,14 @@ var gulp = require('gulp'),
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
     .pipe(coffee())
+    .pipe(ngmin())
     .pipe(gulp.dest(paths.dest));
 });
 
 gulp.task('scripts_min', function() {
   return gulp.src(paths.scripts)
     .pipe(coffee())
+    .pipe(ngmin())
     .pipe(uglify())
     .pipe(rename({extname: '.min.js'}))
     .pipe(gulp.dest('dist'));
