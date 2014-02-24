@@ -10,13 +10,13 @@ Include the JS script:
 
     <script src="/bower_components/<path to file name>.js"></script>
 
-If yuo need to support IE8 and other older browsers please include:
+If you need to support IE8 and other older browsers please include:
 
     <script src="/bower_components/es5-shim/es5-shim.min.js"></script>
 
 Add module to your app's dependencies:
 
-    angular.module('YourApp', ['TegNgRegexpUtils'])
+    angular.module('YourApp', ['TegNgSelectSubstring'])
 
 ## Usage
 
@@ -28,8 +28,6 @@ will produce:
 
 
 ## Development
-
-Setup:
 
 After cloning the github repo into a dir:
 
