@@ -16,7 +16,7 @@
     "src",
     "karma*",
     "package.json",
-    "Gruntfile.js"
+    "gulpfile.js"
   ],
   "private": true
 }
