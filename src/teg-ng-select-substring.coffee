@@ -6,14 +6,16 @@ factory('tegNgSelectSubstring', (tegNgTextUtils, $sce) ->
     $sce.trustAsHtml(@selectUnsafe(text, highlightText))
 
   selectUnsafe: (text, highlightText) ->
+    text = '' unless text?
     words = @extractWords(highlightText)
     text = @replaceOneWord(text, word) for word in words
 
-    text = @escapeHtml(text)
+    text = tegNgTextUtils.escapeHtml(text)
     text = text.replace(/__tag_start__/g, "<span class='SelectedSubstring'>")
     text.replace(/__tag_end__/g, '</span>')
 
   extractWords: (text) ->
+    text = '' unless text?
     words = text.split(' ')
     words = words.filter((element) -> element.length)
     words = @uniqArray(words)
@@ -28,12 +30,4 @@ factory('tegNgSelectSubstring', (tegNgTextUtils, $sce) ->
   uniqArray: (array) ->
     array.filter (value, index, self) ->
       self.indexOf(value) == index
-
-  escapeHtml: (unsafe) ->
-    unsafe
-     .replace(/&/g, "&amp;")
-     .replace(/</g, "&lt;")
-     .replace(/>/g, "&gt;")
-     .replace(/"/g, "&quot;")
-     .replace(/'/g, "&#039;");
 )
