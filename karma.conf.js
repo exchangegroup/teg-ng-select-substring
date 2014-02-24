@@ -13,6 +13,7 @@ module.exports = function(config) {
     files: [
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/teg-ng-regexp-utils/dist/teg-ng-regexp-utils.min.js',
       'src/**/*.coffee',
       'test/**/*spec.coffee'
     ],

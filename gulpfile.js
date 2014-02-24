@@ -24,15 +24,8 @@ gulp.task('scripts_min', function() {
     .pipe(gulp.dest('dist'));
 });
 
-var testFiles = [
-  'app/bower_components/angular/angular.js',
-  'app/bower_components/angular-mocks/angular-mocks.js',
-  'src/**/*.coffee',
-  'test/**/*spec.coffee'
-];
-
 gulp.task('test', function() {
-  return gulp.src(testFiles)
+  return gulp.src('take files from karma.conf please')
     .pipe(karma({
       configFile: 'karma.conf.js',
       action: 'run'
