@@ -6,7 +6,7 @@ Highlights a subsctring in HTML text.
 
     bower install <path to github repo>
 
-Include the JS script:
+Include the JS:
 
     <script src="/bower_components/teg-ng-regexp-utils/dist/teg-ng-regexp-utils.min.js"></script>
     <script src="/bower_components/<path to file name>.js"></script>
