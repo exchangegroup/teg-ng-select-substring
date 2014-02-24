@@ -9,7 +9,7 @@ Highlights a subsctring in HTML text.
 Include the JS:
 
     <script src="/bower_components/teg-ng-regexp-utils/dist/teg-ng-regexp-utils.min.js"></script>
-    <script src="/bower_components/<path to file name>.js"></script>
+    <script src="/bower_components/teg-ng-select-substring/dist/teg-ng-select-substring.min.js"></script>
 
 If you need to support IE8 and other older browsers please Include:
 
