@@ -43,6 +43,7 @@ After cloning the github repo into a dir:
 
     npm install
     bower install
+    npm install -g gulp
 
 Test:
 
