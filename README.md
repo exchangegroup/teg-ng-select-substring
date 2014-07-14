@@ -1,6 +1,6 @@
 # Overview
 
-Highlights a subsctring in HTML text.
+Highlights a substring in HTML text.
 
 ## Install
 
