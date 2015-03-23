@@ -1,6 +1,6 @@
 {
   "name": "teg-ng-select-substring",
-  "main": "teg-ng-select-substring.min.js",
+  "main": "dist/teg-ng-select-substring.min.js",
   "dependencies": {
     "teg-ng-text-utils": "git@github.com:bikeexchange/teg-ng-text-utils.git#~0.1.5"
   },
